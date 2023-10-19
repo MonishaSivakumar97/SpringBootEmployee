@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Request Management System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Request Management System</h1>
+        <hr>
+        <h5>New Service Request</h5>
+
+        <form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="POST">
+            <input type="text" th:field="*{firstName}" placeholder="User First Name" class="form-control mb-3 col-4">
+
+            <input type="text" th:field="*{lastName}" placeholder="User Last Name" class="form-control mb-3 col-4">
+
+            <input type="text" th:field="*{email}" placeholder="Email ID" class="form-control mb-3 col-4">
+            
+            <h5>Project Details</h5>
+            
+            <input type="text" th:field="*{accountcostomer}" placeholder="Account/costomer" class="form-control mb-3 col-4">
+            
+            <input type="text" th:field="*{projectName}" placeholder="Project Name" class="form-control mb-3 col-4">
+            
+            <input type="text" th:field="*{projectDetails}" placeholder="Project Details" class="form-control mb-3 col-4">
+            
+            <label for="cars">Type of the Service Required:</label>
+            <select name="cars" id="cars" type="text" th:field="*{ServiceRequired}" class="form-control mb-2 col-2">
+            <option value="">Service Required</option>
+            <option value="architecture assessment">Architecture Assessment</option>
+            <option value="security assessment">Security Assessment</option>
+            <option value="design review">Design Review</option>
+            <option value="POV help">POV Help</option>
+            <option value="Technical Deliverables review">Technical Deliverables review</option>
+            </select>
+            
+            <label for="createddate">Created date:</label>
+            <input type="date" th:field="*{createdDate}" id="Createddate" name="createddate" class="form-control mb-2 col-2">
+            
+            <input type="text" th:field="*{createdBy}" placeholder="Created By" class="form-control mb-3 col-4">
+            
+            <label for="completiondate">Tentative Target Completion Date:</label>
+            <input type="date" id="completionDate" th:field="*{completionDate}" name="completionDate" class="form-control mb-2 col-2">
+            
+            <button type="submit" class="btn btn-info col-1"> Save</button>
+            <button type="reset" value="Reset" class="btn btn-info col-1">Cancel</button>
+        </form>
+
+        <hr>
+
+        <a th:href="@{/}"> Back to Request List</a>
+    </div>
+</body>
+
+</html>
